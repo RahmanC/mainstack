@@ -51,4 +51,9 @@
       margin: 0;
     }
   }
+
+  &_donuts {
+    display: flex;
+    gap: $base;
+  }
 }

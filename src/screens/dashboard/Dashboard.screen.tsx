@@ -3,6 +3,7 @@ import Pill from "components/pill/Pill.component";
 import { TimeHook } from "hooks/TimeHook";
 import style from "./Dashboard.module.scss";
 import { ReactComponent as Info } from "assets/svg/info.svg";
+import LocationContainer from "components/chartContainer/Location.component";
 
 const Dashboard = () => {
   const graph_data = {
@@ -17,6 +18,7 @@ const Dashboard = () => {
     "2022-08-08": 100,
     "2022-08-09": 2,
   };
+
   const { timeOfDay } = TimeHook();
   return (
     <div className={style.main}>
@@ -38,6 +40,10 @@ const Dashboard = () => {
         <p>All time</p>
         <p className={style.main_chart_count}>500</p>
         <View data={graph_data} />
+      </div>
+
+      <div className={style.main_donuts}>
+        <LocationContainer />
       </div>
     </div>
   );

@@ -2,10 +2,14 @@
 @import "scss/_sass-variables.scss";
 
 .nav {
+  min-width: 100%;
   max-width: 100%;
-  padding: $base auto;
+  height: 8vh;
+  padding: $base 1.5rem;
   text-transform: capitalize;
   color: $dark;
   font-weight: 600;
   font-size: $lg;
+  position: fixed;
+  background-color: #ffffff;
 }

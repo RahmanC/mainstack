@@ -9,9 +9,11 @@ const AppLayout = () => {
       <div className={style.layout_menu}>
         <Sidebar />
       </div>
-      <div className={style.layout_content}>
+      <div className={style.layout_main}>
         <Navbar />
-        <Outlet />
+        <div className={style.layout_content}>
+          <Outlet />
+        </div>
       </div>
     </div>
   );

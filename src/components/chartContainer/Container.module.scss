@@ -1,0 +1,53 @@
+@import "scss/_media-query-mixins.scss";
+@import "scss/_sass-variables.scss";
+
+.main {
+  margin-top: $xlg;
+  border-radius: 12px;
+  border: 1px solid $pillBg;
+  padding: $base;
+  width: 100%;
+  &_head {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 0 $base;
+    color: $dark;
+    font-size: $lg;
+    font-weight: 600;
+
+    p {
+      color: $primaryColor;
+      cursor: pointer;
+      font-size: $base;
+      font-weight: 500;
+    }
+  }
+
+  &_bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: $base $xxlg;
+    gap: $lg;
+
+    &_legends {
+      display: flex;
+      flex-direction: column;
+      gap: $lg;
+
+      &_legend {
+        display: flex;
+        align-items: center;
+        gap: $base;
+
+        span {
+          width: 12px;
+          height: 12px;
+          background-color: $blue;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

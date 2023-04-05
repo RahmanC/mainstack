@@ -31,7 +31,7 @@ const View: React.FC<Props> = ({ data }) => {
     },
   };
 
-  return <Chart options={options} series={series} type='area' height={350} />;
+  return <Chart options={options} series={series} type='area' height={400} />;
 };
 
 export default View;
