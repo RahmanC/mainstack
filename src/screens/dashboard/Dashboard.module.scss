@@ -1,2 +1,28 @@
 @import "scss/_media-query-mixins.scss";
 @import "scss/_sass-variables.scss";
+
+.main {
+  margin-top: $base;
+  width: 100%;
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_greeting {
+      display: flex;
+      flex-direction: column;
+      p {
+        color: $dark;
+        &:nth-child(1) {
+          font-size: $xxlg;
+          font-weight: 600;
+        }
+      }
+    }
+
+    &_analytic {
+      color: $primaryColor;
+    }
+  }
+}

@@ -8,6 +8,7 @@
 
   &_menu {
     width: 350px;
+    max-height: 100vh;
   }
   &_content {
     width: calc(100% - 350px);
