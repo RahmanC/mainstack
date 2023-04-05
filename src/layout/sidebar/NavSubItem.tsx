@@ -3,13 +3,13 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import style from "./Sidebar.module.scss";
 
-type NavProps = {
-  label?: string;
-  subRoutes: Array<TLink>;
-};
+// type NavProps = {
+//   label: string;
+//   subRoutes: any;
+// };
 
-const NavSubItem = (props: NavProps) => {
-  const { subRoutes, label } = props;
+const NavSubItem = (props: any) => {
+  const { subRoutes, title } = props;
   const [visible, setVisible] = useState<Boolean>(false);
 
   return (
@@ -18,13 +18,12 @@ const NavSubItem = (props: NavProps) => {
         className={style.sub_item_link}
         onClick={() => setVisible((prev) => !prev)}
       >
-        <div className={style.sub_item_link_label}>{label}</div>
+        <div className={style.sub_item_link_label}>{title}</div>
       </div>
 
       {visible && (
         <ul className={style.item_list}>
-          {subRoutes?.map((subRoute: TLink) => {
-            console.log("subrou", subRoute);
+          {subRoutes.map((subRoute: any) => {
             return (
               <li key={subRoute.title}>
                 <NavLink

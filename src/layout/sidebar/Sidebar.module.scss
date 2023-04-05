@@ -1,2 +1,79 @@
 @import "scss/_media-query-mixins.scss";
 @import "scss/_sass-variables.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  height: 100vh;
+  align-items: flex-start;
+
+  &_logo {
+    margin-left: 3.5rem;
+    margin-bottom: $base;
+    cursor: pointer;
+  }
+
+  &_items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &_user {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 3.5rem;
+      gap: $base;
+
+      &_img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+
+  &_active,
+  &_link {
+    display: flex;
+    gap: $lg;
+    text-decoration: none;
+    font-size: $base;
+    color: $fontColor;
+    font-weight: 500;
+  }
+  &_active {
+    color: $primaryColor;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 0;
+      height: 60%;
+      width: 2px;
+      background-color: $primaryColor;
+      border-radius: 3px;
+    }
+  }
+
+  &_inner {
+    display: flex;
+    gap: $base;
+    align-items: center;
+    padding: 1.5rem 3.5rem;
+
+    &_label {
+    }
+    &_icon {
+      color: $primaryColor;
+    }
+  }
+}
