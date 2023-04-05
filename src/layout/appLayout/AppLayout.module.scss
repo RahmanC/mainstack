@@ -1,0 +1,15 @@
+@import "scss/_media-query-mixins.scss";
+@import "scss/_sass-variables.scss";
+
+.layout {
+  display: flex;
+  flex: 1;
+  max-width: 100%;
+
+  &_menu {
+    width: 20%;
+  }
+  &_content {
+    width: 80%;
+  }
+}
