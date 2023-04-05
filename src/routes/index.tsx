@@ -28,7 +28,6 @@ export default function Router() {
         { path: "dashboard", element: <Dashboard /> },
 
         { path: "*", element: <Page404 /> },
-        // { path: "*", element: <Navigate to='/404' replace /> },
       ],
     },
   ]);

@@ -25,4 +25,30 @@
       color: $primaryColor;
     }
   }
+  &_chart {
+    margin-top: $xlg;
+    border-radius: 12px;
+    border: 1px solid $pillBg;
+    padding: $base;
+    width: 100%;
+    &_head {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      padding: 0 $base;
+      color: $dark;
+      font-size: $lg;
+      font-weight: 600;
+    }
+    p {
+      padding: 0 $base;
+      color: $dark;
+    }
+    &_count {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0;
+    }
+  }
 }
