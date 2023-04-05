@@ -1,20 +1,20 @@
 /* eslint-disable array-callback-return */
 import React from "react";
 import style from "./Container.module.scss";
-import Location from "components/chart/Location.component";
-import { ReactComponent as Nigeria } from "assets/svg/nigeria.svg";
-import { ReactComponent as Ghana } from "assets/svg/andora.svg";
-import { ReactComponent as Germany } from "assets/svg/usa.svg";
-import { ReactComponent as Finland } from "assets/svg/holland.svg";
+import DoughnutChart from "components/chart/Doughnut.component";
+import { ReactComponent as Google } from "assets/svg/twitter.svg";
+import { ReactComponent as Facebook } from "assets/svg/facebook.svg";
+import { ReactComponent as Instagram } from "assets/svg/instagram.svg";
+import { ReactComponent as Linkedin } from "assets/svg/linkedin.svg";
 
 export function LegendComponent(props: any) {
-  const { flag, country, percent, color } = props;
+  const { flag, source, percent, color } = props;
   return (
-    <div key={country} className={style.main_bottom_legends_legend}>
+    <div key={source} className={style.main_bottom_legends_legend}>
       {flag}
 
       <div>
-        {country} {percent}%{" "}
+        {source} {percent}%{" "}
       </div>
       <span
         style={{ background: color }}
@@ -24,32 +24,27 @@ export function LegendComponent(props: any) {
   );
 }
 
-const LocationContainer = () => {
+const ReferralContainer = () => {
   const data = [
     {
-      country: "Nigeria",
-      count: 68,
-      percent: 34,
-    },
-    {
-      country: "Germany",
-      count: 37,
-      percent: 19,
-    },
-    {
-      country: "Ghana",
+      source: "google",
       count: 50,
       percent: 25,
     },
     {
-      country: "Finland",
+      source: "instagram",
+      count: 68,
+      percent: 34,
+    },
+    {
+      source: "facebook",
       count: 40,
       percent: 20,
     },
     {
-      country: "United Kingdom",
-      count: 4,
-      percent: 2,
+      source: "linkedin",
+      count: 41,
+      percent: 21,
     },
   ];
 
@@ -72,25 +67,29 @@ const LocationContainer = () => {
       <div className={style.main_bottom}>
         <div className={style.main_bottom_legends}>
           {topLocations.map((d) => {
-            switch (d.country) {
-              case "Nigeria":
+            switch (d.source) {
+              case "google":
                 return (
-                  <LegendComponent flag={<Nigeria />} color='#599eea' {...d} />
+                  <LegendComponent flag={<Google />} color="#599eea" {...d} />
                 );
 
-              case "Germany":
+              case "instagram":
                 return (
-                  <LegendComponent flag={<Germany />} color='#844ff6' {...d} />
+                  <LegendComponent
+                    flag={<Instagram />}
+                    color="#844ff6"
+                    {...d}
+                  />
                 );
 
-              case "Ghana":
+              case "facebook":
                 return (
-                  <LegendComponent flag={<Ghana />} color='#0fb77a' {...d} />
+                  <LegendComponent flag={<Facebook />} color="#0fb77a" {...d} />
                 );
 
-              case "Finland":
+              case "linkedin":
                 return (
-                  <LegendComponent flag={<Finland />} color='#fab70a' {...d} />
+                  <LegendComponent flag={<Linkedin />} color="#fab70a" {...d} />
                 );
 
               default:
@@ -98,18 +97,25 @@ const LocationContainer = () => {
             }
           })}
 
-          <div className={style.main_bottom_legends_legend}>
-            <div>others {otherCount}% </div>
-            <span
-              style={{ background: "#f09468" }}
-              className={style.main_bottom_legends_legend_color}
-            ></span>
-          </div>
+          {data?.length > 4 && (
+            <div className={style.main_bottom_legends_legend}>
+              <div>others {otherCount}% </div>
+              <span
+                style={{ background: "#f09468" }}
+                className={style.main_bottom_legends_legend_color}
+              ></span>
+            </div>
+          )}
         </div>
-        <Location data={data} />
+        <DoughnutChart
+          data={data}
+          countKey="count"
+          labelKey="source"
+          sourceKey="percent"
+        />
       </div>
     </div>
   );
 };
 
-export default LocationContainer;
+export default ReferralContainer;

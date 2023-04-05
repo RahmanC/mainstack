@@ -4,6 +4,7 @@ import { TimeHook } from "hooks/TimeHook";
 import style from "./Dashboard.module.scss";
 import { ReactComponent as Info } from "assets/svg/info.svg";
 import LocationContainer from "components/chartContainer/Location.component";
+import ReferralContainer from "components/chartContainer/Referral.component";
 
 const Dashboard = () => {
   const graph_data = {
@@ -44,6 +45,7 @@ const Dashboard = () => {
 
       <div className={style.main_donuts}>
         <LocationContainer />
+        <ReferralContainer />
       </div>
     </div>
   );

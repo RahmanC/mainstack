@@ -1,7 +1,7 @@
 /* eslint-disable array-callback-return */
 import React from "react";
 import style from "./Container.module.scss";
-import Location from "components/chart/Location.component";
+import DoughnutChart from "components/chart/Doughnut.component";
 import { ReactComponent as Nigeria } from "assets/svg/nigeria.svg";
 import { ReactComponent as Ghana } from "assets/svg/andora.svg";
 import { ReactComponent as Germany } from "assets/svg/usa.svg";
@@ -75,22 +75,22 @@ const LocationContainer = () => {
             switch (d.country) {
               case "Nigeria":
                 return (
-                  <LegendComponent flag={<Nigeria />} color='#599eea' {...d} />
+                  <LegendComponent flag={<Nigeria />} color="#599eea" {...d} />
                 );
 
               case "Germany":
                 return (
-                  <LegendComponent flag={<Germany />} color='#844ff6' {...d} />
+                  <LegendComponent flag={<Germany />} color="#844ff6" {...d} />
                 );
 
               case "Ghana":
                 return (
-                  <LegendComponent flag={<Ghana />} color='#0fb77a' {...d} />
+                  <LegendComponent flag={<Ghana />} color="#0fb77a" {...d} />
                 );
 
               case "Finland":
                 return (
-                  <LegendComponent flag={<Finland />} color='#fab70a' {...d} />
+                  <LegendComponent flag={<Finland />} color="#fab70a" {...d} />
                 );
 
               default:
@@ -106,7 +106,12 @@ const LocationContainer = () => {
             ></span>
           </div>
         </div>
-        <Location data={data} />
+        <DoughnutChart
+          data={data}
+          countKey="count"
+          labelKey="country"
+          sourceKey="percent"
+        />
       </div>
     </div>
   );
