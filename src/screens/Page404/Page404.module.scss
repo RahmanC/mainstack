@@ -1,0 +1,37 @@
+@import "scss/_media-query-mixins.scss";
+@import "scss/_sass-variables.scss";
+
+.page_not_found {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $xlg;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  align-self: center;
+
+  &_img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: contain;
+  }
+
+  &_text {
+    color: $fontColor;
+    text-align: center;
+    font-size: $lg;
+  }
+
+  &_home_btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: $primaryColor;
+    padding: $base $xlg;
+    border-radius: 5px;
+    color: #fff;
+    font-size: $base;
+  }
+}

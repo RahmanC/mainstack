@@ -3,7 +3,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Söhne", sans-serif;
 
   // customizing the scroll bar
   ::-webkit-scrollbar {
@@ -27,12 +27,12 @@
 }
 
 body {
-  font-family: "Work Sans", sans-serif;
+  font-family: "Söhne", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $appBgColor;
   color: $fontColor;
-  font-size: $md;
+  font-size: $base;
   padding: 0;
   margin: 0;
 }

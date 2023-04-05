@@ -1,0 +1,23 @@
+@import "scss/_media-query-mixins.scss";
+@import "scss/_sass-variables.scss";
+
+.main {
+  display: flex;
+  gap: $xs;
+
+  &_pill,
+  &_activePill {
+    color: #31373d;
+    font-weight: 500;
+    border-radius: 100px;
+    padding: $xs $base;
+    border: 1px solid $pillBg;
+    cursor: pointer;
+  }
+  &_activePill {
+    background-color: #ffeee5;
+    border: 1px solid $primaryColor;
+    color: $primaryColor;
+    transition: 0.5s ease-in-out;
+  }
+}

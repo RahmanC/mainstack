@@ -26,6 +26,9 @@ export default function Router() {
           index: true,
         },
         { path: "dashboard", element: <Dashboard /> },
+
+        { path: "*", element: <Page404 /> },
+        // { path: "*", element: <Navigate to='/404' replace /> },
       ],
     },
   ]);
@@ -34,3 +37,5 @@ export default function Router() {
 const Dashboard = Loadable(
   lazy(() => import("screens/dashboard/Dashboard.screen"))
 );
+
+const Page404 = Loadable(lazy(() => import("screens/Page404/Page404.page")));

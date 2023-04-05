@@ -1,3 +1,4 @@
+import Pill from "components/pill/Pill.component";
 import { TimeHook } from "hooks/TimeHook";
 import style from "./Dashboard.module.scss";
 
@@ -13,6 +14,7 @@ const Dashboard = () => {
 
         <div className={style.main_header_analytic}>View analytics</div>
       </div>
+      <Pill />
     </div>
   );
 };
