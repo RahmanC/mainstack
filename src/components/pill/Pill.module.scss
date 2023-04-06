@@ -10,6 +10,16 @@
     overflow-x: scroll;
     padding: $lg 0;
   }
+  @include md {
+    max-width: 100%;
+    overflow-x: scroll;
+    padding: $lg 0;
+  }
+  @include base {
+    max-width: 100%;
+    overflow-x: scroll;
+    padding: $lg 0;
+  }
 
   &_pill,
   &_activePill {
@@ -20,6 +30,12 @@
     border: 1px solid $pillBg;
     cursor: pointer;
     @include sm {
+      min-width: max-content;
+    }
+    @include md {
+      min-width: max-content;
+    }
+    @include base {
       min-width: max-content;
     }
   }

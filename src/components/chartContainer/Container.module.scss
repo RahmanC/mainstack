@@ -33,6 +33,15 @@
     @include sm {
       flex-direction: column-reverse;
     }
+    @include md {
+      flex-direction: column-reverse;
+    }
+    @include base {
+      flex-direction: column-reverse;
+    }
+    @include lg {
+      flex-direction: column-reverse;
+    }
 
     &_legends {
       display: flex;

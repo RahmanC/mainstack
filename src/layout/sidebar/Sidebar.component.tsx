@@ -12,7 +12,6 @@ import { UtilContext } from "context/UtilContext";
 const Sidebar = () => {
   const { isMobile, showHamburger } = React.useContext(UtilContext);
 
-  console.log("ah", showHamburger);
   return (
     <div
       className={` ${isMobile && showHamburger ? style.show_side : style.main}`}

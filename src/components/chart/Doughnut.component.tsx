@@ -48,7 +48,7 @@ const DoughnutChart = <T extends Record<string, any>>({
       type="donut"
       options={options}
       series={series}
-      height={350}
+      height={250}
     />
   );
 };

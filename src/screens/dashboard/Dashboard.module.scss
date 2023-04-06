@@ -7,6 +7,9 @@
   @include sm {
     margin-top: 2rem;
   }
+  @include md {
+    margin-top: 3rem;
+  }
   &_header {
     display: flex;
     justify-content: space-between;
@@ -65,6 +68,9 @@
     gap: $base;
 
     @include sm {
+      flex-direction: column;
+    }
+    @include md {
       flex-direction: column;
     }
   }

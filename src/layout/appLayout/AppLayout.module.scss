@@ -23,10 +23,16 @@
     @include sm {
       width: 100%;
     }
+    @include md {
+      width: 100%;
+    }
   }
   &_content {
     padding: 3rem 1.5rem;
     @include sm {
+      padding: $base;
+    }
+    @include md {
       padding: $base;
     }
   }

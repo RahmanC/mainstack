@@ -83,12 +83,18 @@ const LocationContainer = ({
             </div>
           )}
         </div>
-        <DoughnutChart
-          data={data}
-          countKey="count"
-          labelKey="country"
-          sourceKey="percent"
-        />
+        <div
+          style={{
+            maxWidth: "500px",
+          }}
+        >
+          <DoughnutChart
+            data={data}
+            countKey="count"
+            labelKey="country"
+            sourceKey="percent"
+          />
+        </div>
       </div>
     </div>
   );
