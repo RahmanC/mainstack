@@ -1,14 +1,16 @@
 # Mainstack fronted engineer assessment
 
-[live preview](https://mainstack-rahman.web.app)
+[Live Preview](https://mainstack-rahman.web.app)
 
 ## Available Scripts
 
-In the project directory, you can run:
   
 Create `.env` file and declare `REACT_APP_BASE_URL` = http://`replace with the baseurl`
 
-Run `yarn` to install dependencies
+In the project directory, you can run:
+
+### `yarn`
+To install all dependencies
 
 ### `yarn start`
 
