@@ -31,11 +31,12 @@ const LocationContainer = ({
 
       <div className={style.main_bottom}>
         <div className={style.main_bottom_legends}>
-          {topLocations.map((d: any) => {
+          {topLocations.map((d: any, index: number) => {
             switch (d.country) {
               case "Nigeria":
                 return (
                   <LegendComponent
+                    key={index}
                     flag={<Nigeria />}
                     color="#599eea"
                     {...d}
@@ -46,6 +47,7 @@ const LocationContainer = ({
               case "Germany":
                 return (
                   <LegendComponent
+                    key={index}
                     flag={<Germany />}
                     color="#844ff6"
                     {...d}
@@ -56,6 +58,7 @@ const LocationContainer = ({
               case "Ghana":
                 return (
                   <LegendComponent
+                    key={index}
                     flag={<Ghana />}
                     color="#0fb77a"
                     {...d}
@@ -66,6 +69,7 @@ const LocationContainer = ({
               case "Finland":
                 return (
                   <LegendComponent
+                    key={index}
                     flag={<Finland />}
                     color="#fab70a"
                     {...d}

@@ -30,16 +30,22 @@ const ReferralContainer = ({
 
       <div className={style.main_bottom}>
         <div className={style.main_bottom_legends}>
-          {topLocations.map((d) => {
+          {topLocations.map((d: any, index: number) => {
             switch (d.source) {
               case "google":
                 return (
-                  <LegendComponent flag={<Google />} color="#599eea" {...d} />
+                  <LegendComponent
+                    key={index}
+                    flag={<Google />}
+                    color="#599eea"
+                    {...d}
+                  />
                 );
 
               case "instagram":
                 return (
                   <LegendComponent
+                    key={index}
                     flag={<Instagram />}
                     color="#844ff6"
                     {...d}
@@ -48,12 +54,22 @@ const ReferralContainer = ({
 
               case "facebook":
                 return (
-                  <LegendComponent flag={<Facebook />} color="#0fb77a" {...d} />
+                  <LegendComponent
+                    key={index}
+                    flag={<Facebook />}
+                    color="#0fb77a"
+                    {...d}
+                  />
                 );
 
               case "linkedin":
                 return (
-                  <LegendComponent flag={<Linkedin />} color="#fab70a" {...d} />
+                  <LegendComponent
+                    key={index}
+                    flag={<Linkedin />}
+                    color="#fab70a"
+                    {...d}
+                  />
                 );
 
               default:
