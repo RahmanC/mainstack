@@ -1,3 +1,4 @@
+import * as React from "react";
 import View from "components/chart/View.component";
 import Pill from "components/pill/Pill.component";
 import { TimeHook } from "hooks/TimeHook";
@@ -10,6 +11,10 @@ import { DataContext } from "context/DataContext";
 import Loader from "components/loader/Loader.component";
 
 const Dashboard = () => {
+  const [active, setActive] = React.useState<string>("all");
+  const [startDate, setStartDate] = React.useState<string | undefined>();
+  const [endDate, setEndDate] = React.useState<string | undefined>();
+
   // get responses from data context
   const { loading, records, locations, sources } = useContext(DataContext);
 
@@ -30,7 +35,31 @@ const Dashboard = () => {
 
         <div className={style.main_header_analytic}>View analytics</div>
       </div>
-      <Pill />
+      <div className={style.main_pill}>
+        <Pill active={active} setActive={setActive} />
+        {active === "custom" && (
+          <div className={style.main_pill_datePicker}>
+            <div className={style.main_pill_datePicker_from}>
+              <label>From</label>
+              <input
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+                className={style.main_pill_datePicker_from_input}
+              />
+            </div>
+            <div className={style.main_pill_datePicker_from}>
+              <label>To</label>
+              <input
+                type="date"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+                className={style.main_pill_datePicker_from_input}
+              />
+            </div>
+          </div>
+        )}
+      </div>
 
       <div className={style.main_chart}>
         <div className={style.main_chart_head}>

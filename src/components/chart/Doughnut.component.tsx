@@ -1,12 +1,6 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
-
-interface DoughnutChartProps<T> {
-  data: T[];
-  countKey: string;
-  labelKey: string;
-  sourceKey: string;
-}
+import { DoughnutChartProps } from "utils/types";
 
 const DoughnutChart = <T extends Record<string, any>>({
   data,

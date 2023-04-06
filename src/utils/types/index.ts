@@ -21,3 +21,25 @@ export type TLink = {
     count: number;
     percent: number;
   };
+
+  export type PillProps = {
+    value: string;
+    label: string;
+  };
+  
+  export type StateProps = {
+    active: string;
+    setActive: (value: string) => void;
+  };
+
+  export type Props = {
+    data: Record<string, number>;
+    color?: string;
+  }
+
+  export type DoughnutChartProps<T> = {
+    data: T[];
+    countKey: string;
+    labelKey: string;
+    sourceKey: string;
+  }

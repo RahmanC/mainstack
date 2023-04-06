@@ -7,23 +7,7 @@ import { ReactComponent as Ghana } from "assets/svg/ghana.svg";
 import { ReactComponent as Germany } from "assets/svg/germany.svg";
 import { ReactComponent as Finland } from "assets/svg/finland.svg";
 import { LocationProps } from "utils/types";
-
-export function LegendComponent(props: any) {
-  const { flag, country, percent, color } = props;
-  return (
-    <div key={country} className={style.main_bottom_legends_legend}>
-      {flag}
-
-      <div>
-        {country} {percent}%{" "}
-      </div>
-      <span
-        style={{ background: color }}
-        className={style.main_bottom_legends_legend_color}
-      ></span>
-    </div>
-  );
-}
+import LegendComponent from "components/legend/Legend.component";
 
 const LocationContainer = ({
   data,
@@ -41,7 +25,7 @@ const LocationContainer = ({
   return (
     <div className={style.main}>
       <div className={style.main_head}>
-        <div>Page Views</div>
+        <div>Top Locations</div>
         <p>View Full Reports</p>
       </div>
 
@@ -51,22 +35,42 @@ const LocationContainer = ({
             switch (d.country) {
               case "Nigeria":
                 return (
-                  <LegendComponent flag={<Nigeria />} color="#599eea" {...d} />
+                  <LegendComponent
+                    flag={<Nigeria />}
+                    color="#599eea"
+                    {...d}
+                    source={d.country}
+                  />
                 );
 
               case "Germany":
                 return (
-                  <LegendComponent flag={<Germany />} color="#844ff6" {...d} />
+                  <LegendComponent
+                    flag={<Germany />}
+                    color="#844ff6"
+                    {...d}
+                    source={d.country}
+                  />
                 );
 
               case "Ghana":
                 return (
-                  <LegendComponent flag={<Ghana />} color="#0fb77a" {...d} />
+                  <LegendComponent
+                    flag={<Ghana />}
+                    color="#0fb77a"
+                    {...d}
+                    source={d.country}
+                  />
                 );
 
               case "Finland":
                 return (
-                  <LegendComponent flag={<Finland />} color="#fab70a" {...d} />
+                  <LegendComponent
+                    flag={<Finland />}
+                    color="#fab70a"
+                    {...d}
+                    source={d.country}
+                  />
                 );
 
               default:

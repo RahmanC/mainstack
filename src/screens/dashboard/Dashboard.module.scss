@@ -36,6 +36,32 @@
       color: $primaryColor;
     }
   }
+
+  &_pill {
+    &_datePicker {
+      margin: $base 1.5rem;
+      display: flex;
+      gap: $base;
+
+      &_from {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        label {
+          font-size: $md;
+          font-weight: 600;
+        }
+        &_input {
+          padding: 0.5rem;
+          border: 2px solid $pillBg;
+          color: $fontColor;
+          font-size: $md;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
   &_chart {
     margin-top: $xlg;
     border-radius: 12px;

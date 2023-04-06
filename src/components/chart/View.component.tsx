@@ -1,13 +1,10 @@
-import React from "react";
+import * as React from "react";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
-
-interface Props {
-  data: Record<string, number>;
-}
+import { Props } from "utils/types";
 
 const View: React.FC<Props> = ({ data }) => {
-  const series = [
+  const series: ApexAxisChartSeries = [
     { name: "views", data: Object.values(data ?? {}), color: "#FF5403" },
   ];
   const options: ApexOptions = {

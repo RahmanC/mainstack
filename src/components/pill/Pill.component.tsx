@@ -1,13 +1,7 @@
-import { useState } from "react";
+import { PillProps, StateProps } from "utils/types";
 import style from "./Pill.module.scss";
 
-type PillProps = {
-  value: string;
-  label: string;
-};
-
-const Pill = () => {
-  const [active, setActive] = useState<string>("all");
+const Pill = ({ active, setActive }: StateProps) => {
   const options: PillProps[] = [
     {
       value: "1",

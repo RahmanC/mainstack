@@ -7,23 +7,7 @@ import { ReactComponent as Facebook } from "assets/svg/facebook.svg";
 import { ReactComponent as Instagram } from "assets/svg/instagram.svg";
 import { ReactComponent as Linkedin } from "assets/svg/linkedin.svg";
 import { ReferralProps } from "utils/types";
-
-export function LegendComponent(props: any) {
-  const { flag, source, percent, color } = props;
-  return (
-    <div key={source} className={style.main_bottom_legends_legend}>
-      {flag}
-
-      <div>
-        {source} {percent}%{" "}
-      </div>
-      <span
-        style={{ background: color }}
-        className={style.main_bottom_legends_legend_color}
-      ></span>
-    </div>
-  );
-}
+import LegendComponent from "components/legend/Legend.component";
 
 const ReferralContainer = ({
   data,
@@ -40,7 +24,7 @@ const ReferralContainer = ({
   return (
     <div className={style.main}>
       <div className={style.main_head}>
-        <div>Page Views</div>
+        <div>Top Referral source</div>
         <p>View Full Reports</p>
       </div>
 
