@@ -6,7 +6,6 @@ interface UtilContextProps {
   toggleHamburger: () => void;
   showHamburger: boolean;
   ref: React.RefObject<HTMLDivElement>;
-  ref1: React.RefObject<HTMLDivElement>;
   visible: boolean;
   showFilter: () => void;
   closeFilter: () => void;
@@ -23,7 +22,7 @@ export const UtilContext = React.createContext<UtilContextProps>(
 
 export const UtilProvider: React.FC<GeneralProps> = ({ children }) => {
   const [showHamburger, setShowHamburger] = React.useState(false);
-  const { ref, ref1, visible, setVisible } = useClickOutside();
+  const { ref, visible, setVisible } = useClickOutside();
   const isMobile = useMediaQuery();
 
   // toggle hamburger on smaller screens
@@ -53,7 +52,6 @@ export const UtilProvider: React.FC<GeneralProps> = ({ children }) => {
         toggleHamburger,
         showHamburger,
         ref,
-        ref1,
         visible,
         showFilter,
         closeFilter,

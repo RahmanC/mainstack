@@ -8,7 +8,7 @@ interface Props {
 
 const View: React.FC<Props> = ({ data }) => {
   const series = [
-    { name: "views", data: Object.values(data), color: "#FF5403" },
+    { name: "views", data: Object.values(data ?? {}), color: "#FF5403" },
   ];
   const options: ApexOptions = {
     chart: {
@@ -27,7 +27,7 @@ const View: React.FC<Props> = ({ data }) => {
     },
     xaxis: {
       type: "datetime",
-      categories: Object.keys(data),
+      categories: Object.keys(data ?? {}),
     },
   };
 

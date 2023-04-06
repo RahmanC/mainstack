@@ -10,6 +10,15 @@
   align-items: center;
   height: 100%;
   align-self: center;
+  position: absolute;
+  left: 45%;
+
+  @include sm {
+    left: 0;
+  }
+  @include md {
+    left: 20%;
+  }
 
   &_img {
     width: 10rem;

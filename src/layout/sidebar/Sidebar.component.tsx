@@ -17,7 +17,10 @@ const Sidebar = () => {
       className={` ${isMobile && showHamburger ? style.show_side : style.main}`}
     >
       {!isMobile && (
-        <div className={style.main_logo}>
+        <div
+          className={style.main_logo}
+          onClick={() => (window.location.href = "/")}
+        >
           <MainStack />
         </div>
       )}

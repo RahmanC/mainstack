@@ -3,9 +3,9 @@ import { PropsWithChildren } from "react";
 import style from "./Container.module.scss";
 import DoughnutChart from "components/chart/Doughnut.component";
 import { ReactComponent as Nigeria } from "assets/svg/nigeria.svg";
-import { ReactComponent as Ghana } from "assets/svg/andora.svg";
-import { ReactComponent as Germany } from "assets/svg/usa.svg";
-import { ReactComponent as Finland } from "assets/svg/holland.svg";
+import { ReactComponent as Ghana } from "assets/svg/ghana.svg";
+import { ReactComponent as Germany } from "assets/svg/germany.svg";
+import { ReactComponent as Finland } from "assets/svg/finland.svg";
 import { LocationProps } from "utils/types";
 
 export function LegendComponent(props: any) {

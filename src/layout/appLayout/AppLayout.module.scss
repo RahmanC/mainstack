@@ -16,6 +16,7 @@
   &_main {
     display: flex;
     flex-direction: column;
+
     width: calc(100% - 350px);
     max-height: 100vh;
     overflow-y: scroll;

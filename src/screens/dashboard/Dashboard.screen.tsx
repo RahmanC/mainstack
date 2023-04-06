@@ -7,17 +7,20 @@ import LocationContainer from "components/chartContainer/Location.component";
 import ReferralContainer from "components/chartContainer/Referral.component";
 import { useContext } from "react";
 import { DataContext } from "context/DataContext";
+import Loader from "components/loader/Loader.component";
 
 const Dashboard = () => {
   // get responses from data context
-  const { records, locations, sources } = useContext(DataContext);
+  const { loading, records, locations, sources } = useContext(DataContext);
 
   const graph_data = records?.views;
 
   // dynamic greeting message, depending on the time of the day
   const { timeOfDay } = TimeHook();
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <div className={style.main}>
       <div className={style.main_header}>
         <div className={style.main_header_greeting}>

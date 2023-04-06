@@ -24,7 +24,10 @@ const Navbar = () => {
     <div className={style.nav}>
       <div>{swapTitle[navTitle]}</div>
       {isMobile && (
-        <div className={style.main_logo}>
+        <div
+          className={style.main_logo}
+          onClick={() => (window.location.href = "/")}
+        >
           <MainStack />
         </div>
       )}

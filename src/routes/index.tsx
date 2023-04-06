@@ -7,9 +7,11 @@ import AppLayout from "layout/appLayout/AppLayout.layout";
 // config
 import { DEFAULT_PATH } from "config";
 
+import Loader from "components/loader/Loader.component";
+
 const Loadable = (Component: any) => (props: any) => {
   return (
-    <Suspense>
+    <Suspense fallback={<Loader />}>
       <Component {...props} />
     </Suspense>
   );

@@ -1,0 +1,98 @@
+@import "scss/_sass-variables.scss";
+
+.custom_loader {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  left: 50%;
+  top: 45%;
+
+  &__dot {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+    transform-origin: center top;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 25%;
+      border-radius: 50%;
+      background-color: $primaryColor;
+    }
+
+    &:first-child {
+      animation: swing 1.2s linear infinite;
+    }
+
+    &:last-child {
+      animation: swing2 1.2s linear infinite;
+    }
+  }
+
+  &__swing {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 15%;
+    transform-origin: center top;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 15%;
+      border-radius: 50%;
+      background-color: $white;
+    }
+
+    &:first-child {
+      animation: swing 1.2s linear infinite;
+    }
+
+    &:last-child {
+      animation: swing2 1.2s linear infinite;
+    }
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+
+  25% {
+    transform: rotate(70deg);
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes swing2 {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+
+  75% {
+    transform: rotate(-70deg);
+    animation-timing-function: ease-in;
+  }
+}
