@@ -15,18 +15,18 @@ const DoughnutChart = <T extends Record<string, any>>({
   sourceKey,
 }: DoughnutChartProps<T>) => {
   // Only show the first 4 data in the chart
-  const topData = data.slice(0, 4);
+  const topData = data?.slice(0, 4);
 
   // Calculate the total count of all data
-  const totalCount = data.reduce((acc, curr) => acc + curr[countKey], 0);
+  const totalCount = data?.reduce((acc, curr) => acc + curr[countKey], 0);
 
   // Calculate the count of "Others" data
   const otherCount =
-    totalCount - topData.reduce((acc, curr) => acc + curr[countKey], 0);
+    totalCount - topData?.reduce((acc, curr) => acc + curr[countKey], 0);
 
-  const labels = topData.map((data) => data[labelKey]);
+  const labels = topData?.map((data) => data[labelKey]);
   labels.push("Others");
-  const dataPoints = [...topData.map((data) => data[countKey]), otherCount];
+  const dataPoints = [...topData?.map((data) => data[countKey]), otherCount];
 
   // Set the chart options
   const options = {

@@ -1,11 +1,12 @@
 /* eslint-disable array-callback-return */
-import React from "react";
+import { PropsWithChildren } from "react";
 import style from "./Container.module.scss";
 import DoughnutChart from "components/chart/Doughnut.component";
 import { ReactComponent as Google } from "assets/svg/twitter.svg";
 import { ReactComponent as Facebook } from "assets/svg/facebook.svg";
 import { ReactComponent as Instagram } from "assets/svg/instagram.svg";
 import { ReactComponent as Linkedin } from "assets/svg/linkedin.svg";
+import { ReferralProps } from "utils/types";
 
 export function LegendComponent(props: any) {
   const { flag, source, percent, color } = props;
@@ -24,34 +25,13 @@ export function LegendComponent(props: any) {
   );
 }
 
-const ReferralContainer = () => {
-  const data = [
-    {
-      source: "google",
-      count: 50,
-      percent: 25,
-    },
-    {
-      source: "instagram",
-      count: 68,
-      percent: 34,
-    },
-    {
-      source: "facebook",
-      count: 40,
-      percent: 20,
-    },
-    {
-      source: "linkedin",
-      count: 41,
-      percent: 21,
-    },
-  ];
-
-  const topLocations = data.slice(0, 4);
+const ReferralContainer = ({
+  data,
+}: PropsWithChildren<{ data: ReferralProps[] }>) => {
+  const topLocations = data?.slice(0, 4);
 
   // Calculate the total count of all countries
-  const totalCount = data.reduce((acc, curr) => acc + curr.count, 0);
+  const totalCount = data?.reduce((acc, curr) => acc + curr.count, 0);
 
   // Calculate the count of "Others" countries
   const otherCount =

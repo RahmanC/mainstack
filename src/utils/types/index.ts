@@ -9,3 +9,15 @@ export type TLink = {
     heading?: string;
     subRoutes?: ObjectProps[];
   };
+
+  export type LocationProps = {
+    country: string;
+    count: number;
+    percent: number;
+  };
+
+  export type ReferralProps = {
+    source: string;
+    count: number;
+    percent: number;
+  };

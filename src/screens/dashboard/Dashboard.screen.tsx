@@ -5,22 +5,18 @@ import style from "./Dashboard.module.scss";
 import { ReactComponent as Info } from "assets/svg/info.svg";
 import LocationContainer from "components/chartContainer/Location.component";
 import ReferralContainer from "components/chartContainer/Referral.component";
+import { useContext } from "react";
+import { DataContext } from "context/DataContext";
 
 const Dashboard = () => {
-  const graph_data = {
-    "2022-07-31": 1,
-    "2022-08-01": 3,
-    "2022-08-02": 3,
-    "2022-08-03": 7,
-    "2022-08-04": 8,
-    "2022-08-05": 5,
-    "2022-08-06": 20,
-    "2022-08-07": 50,
-    "2022-08-08": 100,
-    "2022-08-09": 2,
-  };
+  // get responses from data context
+  const { records, locations, sources } = useContext(DataContext);
 
+  const graph_data = records?.views;
+
+  // dynamic greeting message, depending on the time of the day
   const { timeOfDay } = TimeHook();
+
   return (
     <div className={style.main}>
       <div className={style.main_header}>
@@ -44,8 +40,8 @@ const Dashboard = () => {
       </div>
 
       <div className={style.main_donuts}>
-        <LocationContainer />
-        <ReferralContainer />
+        <LocationContainer data={locations} />
+        <ReferralContainer data={sources} />
       </div>
     </div>
   );
