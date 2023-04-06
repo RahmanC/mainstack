@@ -1,6 +1,7 @@
 import swapTitle from "layout/swapTitle";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import Hamburger from "./hamburger/Hamburger.component";
 import style from "./Navbar.module.scss";
 
 const Navbar = () => {
@@ -14,7 +15,14 @@ const Navbar = () => {
     setNavTitle(pathname);
   }, [pathname]);
 
-  return <div className={style.nav}>{swapTitle[navTitle]}</div>;
+  return (
+    <div className={style.nav}>
+      <div>{swapTitle[navTitle]}</div>
+      <div className={style.nav_menu}>
+        <Hamburger />
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;

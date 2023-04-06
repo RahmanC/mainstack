@@ -5,6 +5,12 @@
   display: flex;
   gap: $xs;
 
+  @include sm {
+    max-width: 100%;
+    overflow-x: scroll;
+    padding: $lg 0;
+  }
+
   &_pill,
   &_activePill {
     color: #31373d;
@@ -13,6 +19,9 @@
     padding: $xs $base;
     border: 1px solid $pillBg;
     cursor: pointer;
+    @include sm {
+      min-width: max-content;
+    }
   }
   &_activePill {
     background-color: #ffeee5;

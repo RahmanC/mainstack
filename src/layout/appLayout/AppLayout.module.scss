@@ -6,18 +6,28 @@
   flex: 1;
   max-width: 100%;
 
-  &_menu {
-    width: 350px;
-    max-height: 100vh;
-  }
+  // &_menu {
+  //   width: 350px;
+  //   max-height: 100vh;
+  //   @include sm {
+  //     display: none;
+  //   }
+  // }
   &_main {
     display: flex;
     flex-direction: column;
     width: calc(100% - 350px);
     max-height: 100vh;
     overflow-y: scroll;
+
+    @include sm {
+      width: 100%;
+    }
   }
   &_content {
     padding: 3rem 1.5rem;
+    @include sm {
+      padding: $base;
+    }
   }
 }

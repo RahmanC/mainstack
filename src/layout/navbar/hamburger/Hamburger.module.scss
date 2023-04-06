@@ -1,0 +1,58 @@
+@import "scss/_media-query-mixins.scss";
+@import "scss/_sass-variables.scss";
+
+.bar {
+  display: none;
+
+  @include sm {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    width: 28px;
+    height: 20px;
+    margin-top: 6px;
+  }
+
+  span {
+    position: absolute;
+    width: 27px;
+    height: 2px;
+    background-color: $primaryColor;
+    border-radius: 100px;
+    display: inline-block;
+    transition: 0.3s ease;
+    left: 0;
+  }
+  &_top {
+    top: 0;
+
+    &_transform {
+      transform: rotate(42deg);
+      transform-origin: top left;
+      width: 29px;
+      left: 2px;
+      box-shadow: 0 0 5px #495057;
+    }
+  }
+
+  &_middle {
+    top: 8px;
+
+    &_transform {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+  }
+
+  &_bottom {
+    bottom: 0;
+
+    &_transform {
+      transform: rotate(-42deg);
+      transform-origin: top left;
+      width: 29px;
+      bottom: -1px;
+      box-shadow: 0 0 5px #495057;
+    }
+  }
+}
