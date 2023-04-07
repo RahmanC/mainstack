@@ -10,17 +10,17 @@ const Hamburger = () => {
     <label htmlFor="check" className={style.bar} onClick={toggleHamburger}>
       <span
         className={`${style.bar_top} ${
-          showHamburger ? style.bar_transform : ""
+          showHamburger ? style.bar_top_transform : ""
         }`}
       ></span>
       <span
         className={`${style.bar_middle} ${
-          showHamburger ? style.bar_transform : ""
+          showHamburger ? style.bar_middle_transform : ""
         }`}
       ></span>
       <span
         className={`${style.bar_bottom} ${
-          showHamburger ? style.transform : ""
+          showHamburger ? style.bar_bottom_transform : ""
         }`}
       ></span>
     </label>
