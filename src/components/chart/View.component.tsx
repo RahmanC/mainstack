@@ -3,9 +3,13 @@ import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import { Props } from "utils/types";
 
-const View: React.FC<Props> = ({ data }) => {
+const View: React.FC<Props> = ({ data, filteredData }) => {
   const series: ApexAxisChartSeries = [
-    { name: "views", data: Object.values(data ?? {}), color: "#FF5403" },
+    {
+      name: "views",
+      data: Object.values(filteredData ?? data ?? {}), //if filteredData is unavailable, fallback to data or fallback to empty object
+      color: "#FF5403",
+    },
   ];
   const options: ApexOptions = {
     chart: {
@@ -24,7 +28,7 @@ const View: React.FC<Props> = ({ data }) => {
     },
     xaxis: {
       type: "datetime",
-      categories: Object.keys(data ?? {}),
+      categories: Object.keys(filteredData ?? data ?? {}),
     },
   };
 

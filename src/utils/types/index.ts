@@ -35,6 +35,7 @@ export type TLink = {
   export type Props = {
     data: Record<string, number>;
     color?: string;
+    filteredData?: { [key: string]: number };
   }
 
   export type DoughnutChartProps<T> = {
@@ -43,3 +44,10 @@ export type TLink = {
     labelKey: string;
     sourceKey: string;
   }
+
+  export type DateProps = {
+  startDate: string;
+  setStartDate: (value: string) => void;
+  endDate: string;
+  setEndDate: (value: string) => void;
+}

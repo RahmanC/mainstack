@@ -9,11 +9,10 @@ import ReferralContainer from "components/chartContainer/Referral.component";
 import { useContext } from "react";
 import { DataContext } from "context/DataContext";
 import Loader from "components/loader/Loader.component";
+import DateFilter from "./DateFilter.component";
 
 const Dashboard = () => {
   const [active, setActive] = React.useState<string>("all");
-  const [startDate, setStartDate] = React.useState<string | undefined>();
-  const [endDate, setEndDate] = React.useState<string | undefined>();
 
   // get responses from data context
   const { loading, records, locations, sources } = useContext(DataContext);
@@ -22,6 +21,11 @@ const Dashboard = () => {
 
   // dynamic greeting message, depending on the time of the day
   const { timeOfDay } = TimeHook();
+
+  const [startDate, setStartDate] = React.useState<string>("");
+  const [endDate, setEndDate] = React.useState<string>("");
+
+  const filteredData = filterData(graph_data, startDate, endDate);
 
   return loading ? (
     <Loader />
@@ -37,27 +41,15 @@ const Dashboard = () => {
       </div>
       <div className={style.main_pill}>
         <Pill active={active} setActive={setActive} />
+
+        {/* show date picker only if custom date was selected */}
         {active === "custom" && (
-          <div className={style.main_pill_datePicker}>
-            <div className={style.main_pill_datePicker_from}>
-              <label>From</label>
-              <input
-                type="date"
-                value={startDate}
-                onChange={(e) => setStartDate(e.target.value)}
-                className={style.main_pill_datePicker_from_input}
-              />
-            </div>
-            <div className={style.main_pill_datePicker_from}>
-              <label>To</label>
-              <input
-                type="date"
-                value={endDate}
-                onChange={(e) => setEndDate(e.target.value)}
-                className={style.main_pill_datePicker_from_input}
-              />
-            </div>
-          </div>
+          <DateFilter
+            startDate={startDate}
+            endDate={endDate}
+            setStartDate={setStartDate}
+            setEndDate={setEndDate}
+          />
         )}
       </div>
 
@@ -68,7 +60,14 @@ const Dashboard = () => {
         </div>
         <p>All time</p>
         <p className={style.main_chart_count}>500</p>
-        <View data={graph_data} />
+
+        {active === "custom" ? (
+          // if custom date was passed
+          <View data={graph_data} filteredData={filteredData} />
+        ) : (
+          // otherwise use this
+          <View data={graph_data} />
+        )}
       </div>
 
       <div className={style.main_donuts}>
@@ -80,3 +79,16 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+// function to handle date filtering
+const filterData = (
+  data: { [key: string]: number },
+  startDate: string,
+  endDate: string
+) => {
+  return Object.fromEntries(
+    Object.entries(data ?? {}).filter(
+      ([date]) => date >= startDate && date <= endDate
+    )
+  );
+};

@@ -1,11 +1,11 @@
-# Mainstack fronted engineer assessment
+# Mainstack frontend engineer assessment
 
 [Live Preview](https://mainstack-rahman.web.app)
 
 ## Available Scripts
 
   
-Create `.env` file and declare `REACT_APP_BASE_URL` = http://`replace with the baseurl`
+Create `.env` file in the project root directory and declare `REACT_APP_BASE_URL` = http://`replace with the baseurl`
 
 In the project directory, you can run:
 
