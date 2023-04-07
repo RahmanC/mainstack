@@ -68,7 +68,7 @@ const Dashboard = () => {
           <div>Page Views</div>
           <Info />
         </div>
-        <p>All time</p>
+        <p>{active === "custom" ? startDate + " to " + endDate : "All time"}</p>
         <p className={style.main_chart_count}>
           {/* display the date range views if custom date was selected, otherwise display all views */}
           {active === "custom" ? customCount : allCount}
