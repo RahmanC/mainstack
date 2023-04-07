@@ -51,3 +51,17 @@ export type TLink = {
   endDate: string;
   setEndDate: (value: string) => void;
 }
+
+export type UtilContextProps = {
+  toggleHamburger: () => void;
+  showHamburger: boolean;
+  ref: React.RefObject<HTMLDivElement>;
+  visible: boolean;
+  showFilter: () => void;
+  closeFilter: () => void;
+  isMobile: boolean;
+}
+
+export type GeneralProps = {
+  children: React.ReactNode;
+}

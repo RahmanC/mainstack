@@ -1,20 +1,7 @@
 import * as React from "react";
 import { useClickOutside } from "hooks/UseClickOutside";
 import { useMediaQuery } from "hooks/useMediaQuery";
-
-interface UtilContextProps {
-  toggleHamburger: () => void;
-  showHamburger: boolean;
-  ref: React.RefObject<HTMLDivElement>;
-  visible: boolean;
-  showFilter: () => void;
-  closeFilter: () => void;
-  isMobile: boolean;
-}
-
-interface GeneralProps {
-  children: React.ReactNode;
-}
+import { GeneralProps, UtilContextProps } from "utils/types";
 
 export const UtilContext = React.createContext<UtilContextProps>(
   {} as UtilContextProps
