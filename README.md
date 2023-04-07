@@ -2,6 +2,7 @@
 
 [Live Preview](https://mainstack-rahman.web.app)
 
+![Preview](assets/mainstack.png)
 ## Available Scripts
 
   
