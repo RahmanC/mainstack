@@ -22,10 +22,20 @@ const Dashboard = () => {
   // dynamic greeting message, depending on the time of the day
   const { timeOfDay } = TimeHook();
 
-  const [startDate, setStartDate] = React.useState<string>("");
-  const [endDate, setEndDate] = React.useState<string>("");
+  const [startDate, setStartDate] = React.useState<string>("2022-07-31");
+  const [endDate, setEndDate] = React.useState<string>("2022-08-03");
 
   const filteredData = filterData(graph_data, startDate, endDate);
+
+  const allCount: any = Object.values(graph_data ?? {}).reduce(
+    (total: any, value: any) => total + value,
+    0
+  );
+
+  const customCount: any = Object.values(filteredData ?? {}).reduce(
+    (total: any, value: any) => total + value,
+    0
+  );
 
   return loading ? (
     <Loader />
@@ -59,7 +69,10 @@ const Dashboard = () => {
           <Info />
         </div>
         <p>All time</p>
-        <p className={style.main_chart_count}>500</p>
+        <p className={style.main_chart_count}>
+          {/* display the date range views if custom date was selected, otherwise display all views */}
+          {active === "custom" ? customCount : allCount}
+        </p>
 
         {active === "custom" ? (
           // if custom date was passed
